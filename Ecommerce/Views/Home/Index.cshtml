@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<div class="span9">
+    <div class="well well-small">
+        <h3>@Lang("NewProducts")</h3>
+        <hr class="soften">
+        <div class="row-fluid">
+            <ul class="thumbnails">
+                @foreach (ProductListModel i in ViewBag.Products)
+                {
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <a class="zoomTool" href="/Products/Index/@i.Id"><span class="icon-search"></span> @i.Name</a> <a href="/Products/Index/@i.Id"><img src="@i.Image" alt="website template image"></a>
+                            <div class="caption cntr">
+                                <p>@Lang("Category")</p>
+                                <p><strong> @i.Price TL</strong></p>
+                                <h4><a class="shopBtn" href="/Products/Index/@i.Id">@Lang("AddCart")</a></h4>
+                                <div class="actionList"><a class="pull-left" href="/Products/Index/@i.Id">@Lang("AddWishList")</a> <a class="pull-left" href="/">@Lang("AddCompare")</a></div>
+                                <br class="clr">
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

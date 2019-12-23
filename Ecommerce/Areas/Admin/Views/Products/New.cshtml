@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "New";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-8 order-md-1">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="firstName">Name</label>
+                    <input type="text" class="form-control" name="Name" placeholder="" value="" required="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="username">Image</label>
+                    <input type="text" class="form-control" name="Image" required="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="username">Category Name</label>
+                    <input type="text" class="form-control" name="CategoryName" required=""/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="username">Price</label>
+                    <input type="number" class="form-control" name="Price" required=""/>
+                </div>
+            </div>
+
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Create Product</button>
+        </form>
+    </div>
+</div>

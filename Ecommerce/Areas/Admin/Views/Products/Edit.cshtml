@@ -1,0 +1,41 @@
+﻿@using Ecommerce.Data
+@model Products
+@{
+    ViewData["Title"] = "New";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-8 order-md-1">
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="firstName">Name</label>
+                    @Html.TextBoxFor(n => n.Name, new { @class = "form-control", required = "" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="username">Image</label>
+                    @Html.TextBoxFor(n => n.Image, new { @class = "form-control", required = "" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="username">Category Name</label>
+                    @Html.TextAreaFor(n => n.CategoryName, new { @class = "form-control", required = "" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="username">Price</label>
+                    @Html.TextBoxFor(n => n.Price, new { @class = "form-control", type = "number", required = "" })
+                </div>
+            </div>
+
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Save Product</button>
+        }
+    </div>
+</div>

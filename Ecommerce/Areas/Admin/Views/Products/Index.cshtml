@@ -1,0 +1,42 @@
+﻿@using WebApplication1.Data
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Products</h1>
+<a href="/Admin/Products/New" class="btn btn-success"><span data-feather="plus"></span> New Product</a>
+<br /><br />
+
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ProductListModel i in ViewBag.Products)
+            {
+            <tr>
+                <td>@i.Id</td>
+                <td>@i.Name</td>
+                <td>@i.Category</td>
+                <td>@i.Image</td>
+                <td>@i.Price</td>
+                <td>
+                    <a href="/Products/Index/@i.Id" class="btn btn-info btn-sm">Show</a>
+                    <a href="/Admin/Products/Edit/@i.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="/Admin/Products/Delete/@i.Id" class="btn btn-default btn-sm">Delete</a>
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

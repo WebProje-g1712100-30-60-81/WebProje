@@ -1,0 +1,38 @@
+﻿@using Ecommerce.Data
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Users</h1>
+
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Users i in ViewBag.Users)
+            {
+            <tr>
+                <td>@i.Id</td>
+                <td>@i.Name</td>
+                <td>@i.Lastname</td>
+                <td>@i.Email</td>
+                <td>@i.Password</td>
+                <td>
+                    <a href="/Admin/Users/Delete/@i.Id"  class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            }
+            
+        </tbody>
+    </table>
+</div>
